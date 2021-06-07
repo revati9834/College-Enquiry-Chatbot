@@ -10,10 +10,10 @@ app = Flask(__name__)
 
 app.static_folder = 'static'
 
-app.secret_key = '\x89\xf9b(@m\x03~\xa0k\xd3\xac\xed\xfaN\x1d\x15\x9e\x11;\t\x94j\x93'
+app.secret_key = ''
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'mysql'
+app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'blogin'
 
 mysql = MySQL(app)
