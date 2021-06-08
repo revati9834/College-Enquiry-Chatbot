@@ -30,7 +30,6 @@ def get_bot_response():
     engine = pyttsx3.init()
     """ RATE"""
     rate = engine.getProperty('rate')   # getting details of current speaking rate
-    #print (rate)
     engine.setProperty('rate', 120)     # setting up new voice rate
 
     """VOICE"""
