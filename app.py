@@ -27,7 +27,24 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
+    engine = pyttsx3.init()
+    """ RATE"""
+    rate = engine.getProperty('rate')   # getting details of current speaking rate
+    #print (rate)
+    engine.setProperty('rate', 120)     # setting up new voice rate
+
+    """VOICE"""
+    voices = engine.getProperty('voices')       #getting details of current voice
+    #engine.setProperty('voice', voices[0].id)  #changing index, changes voices. o for male
+    engine.setProperty('voice', voices[1].id)   #changing index, changes voices. 1 for female
+
+    engine.say(str(chatbot.get_response(userText)))
+    
+    engine.runAndWait()
+    engine.stop()
+    
     return str(chatbot.get_response(userText))
+
 
 #@app.route('/')
 @app.route('/login', methods =['GET', 'POST'])
