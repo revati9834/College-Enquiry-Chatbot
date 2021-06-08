@@ -18,6 +18,7 @@ chatbot = ChatBot(
     ],
     database_uri='sqlite:///database.sqlite3'
 ) 
+
  # Training with Personal Ques & Ans 
 training_data_quesans = open('training_data/ques_ans.txt').read().splitlines()
 training_data_personal = open('training_data/personal_ques.txt').read().splitlines()
